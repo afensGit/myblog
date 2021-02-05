@@ -1,0 +1,22 @@
+# 配置数据源
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/myblog?serverTimezone=UTC&characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    root: info
+    com.bin.mybloy: debug
+  file:
+    name: log/mybloy-dev.log
+
+server:
+  port: 8080
+
+# mybatis 持久层配置
+mybatis:
+  mapper-locations: mybatis/mapper/*.xml
+  type-aliases-package: com.bin.myblog.pojo

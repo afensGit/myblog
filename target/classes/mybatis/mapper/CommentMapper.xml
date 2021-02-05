@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bin.myblog.dao.CommentMapper">
+
+    <select id="getAllComment" resultType="com.bin.myblog.pojo.Comment">
+        select * from comment
+    </select>
+
+    <select id="getCommentByBlog" resultType="com.bin.myblog.pojo.Comment" parameterType="java.lang.Long">
+        select * from comment where blogId = #{blogId}
+    </select>
+
+    <insert id="saveComment" parameterType="com.bin.myblog.pojo.Comment">
+        insert into comment (content,createTime,userId,blogId,contentId,parentNickname)
+         values (#{content},#{createTime},#{userId},#{blogId},#{contentId},#{parentNickname})
+    </insert>
+
+    <delete id="deleteComment" parameterType="java.lang.Long">
+        delete from comment where id = #{id}
+    </delete>
+</mapper>

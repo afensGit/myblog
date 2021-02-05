@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="www.lzqcode.com" />
+    <meta name="robots" content="all" />
+    <title>关于我</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" th:href="@{/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+    <link rel="stylesheet" href="css/master.css" th:href="@{/css/master.css}"/>
+    <link rel="stylesheet" href="css/gloable.css" th:href="@{/css/gloable.css}"/>
+    <link rel="stylesheet" href="css/nprogress.css" th:href="@{/css/nprogress.css}"/>
+    <link rel="stylesheet" href="css/about.css" th:href="@{/css/about.css}"/>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <header class="gird-header">
+        <div class="header-fixed">
+            <div class="header-inner">
+                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.liu</a>
+                <nav class="nav" id="nav">
+                    <ul>
+						<li><a th:href="@{/index}">首页</a></li>
+						<li><a th:href="@{/article}">博客</a></li>
+						<li><a th:href="@{/message}">留言</a></li>
+						<li><a th:href="@{/diary}">日记</a></li>
+						<li><a th:href="@{/link}">友链</a></li>
+						<li><a th:href="@{/about}">about me</a></li>
+                    </ul>
+                </nav>
+                <a href="/User/QQLogin" class="blog-user">
+                    <i class="fa fa-qq"></i>
+                </a>
+                <a class="phone-menu">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="doc-container" id="doc-container">
+        <div class="about-banner" id="container">
+		    <header class="l-top hasAnim arrow-holder">
+		        <a data-path-hover="M31.3184948,33.1943359 C36.3357454,28.0664371 44.4728686,28.0690462 49.572124,33.2807584 C54.6360745,38.4563871 54.6061839,46.8782889 49.6566817,51.9369454 L31.318494,69.5197703 L49.6566817,89.71735 C54.6739322,94.8452488 54.6713794,103.161825 49.572124,108.373537 C44.5081735,113.549166 36.267997,113.518616 31.3184948,108.459959 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L31.3184948,33.1943359 Z">
+		            <svg width="0" height="0">
+		                <path fill="#fff" d="M58.9103319,3.8342148C63.9275825,-1.29368407,72.0647057,-1.29107495,77.1639611,3.92063726C82.2279116,9.09626594,82.198021,17.5181678,77.2485188,22.5768242C77.2485188,22.5768242,31.318494,69.5197703,31.318494,69.5197703C31.318494,69.5197703,77.2485188,116.462716,77.2485188,116.462716C82.2657693,121.590615,82.2632165,129.907191,77.1639611,135.118903C72.1000106,140.294532,63.8598341,140.263982,58.9103319,135.205326C58.9103319,135.205326,3.8112137,78.891075,3.8112137,78.891075C-1.25273677,73.7154463,-1.2880417,65.3601778,3.8112137,60.1484655C3.8112137,60.1484655,58.9103319,3.8342148,58.9103319,3.8342148C58.9103319,3.8342148,58.9103319,3.8342148,58.9103319,3.8342148"></path>
+		            </svg>
+		        </a>
+		        <a data-path-hover="M31.3184948,33.1943359 C36.3357454,28.0664371 44.4728686,28.0690462 49.572124,33.2807584 C54.6360745,38.4563871 54.6061839,46.8782889 49.6566817,51.9369454 L31.318494,69.5197703 L49.6566817,89.71735 C54.6739322,94.8452488 54.6713794,103.161825 49.572124,108.373537 C44.5081735,113.549166 36.267997,113.518616 31.3184948,108.459959 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L31.3184948,33.1943359 Z">
+		            <svg width="0" height="0">
+		                <path fill="#fff" d="M58.9103319,3.8342148 C63.9275825,-1.29368407 72.0647057,-1.29107495 77.1639611,3.92063726 C82.2279116,9.09626594 82.198021,17.5181678 77.2485188,22.5768242 L31.318494,69.5197703 L77.2485188,116.462716 C82.2657693,121.590615 82.2632165,129.907191 77.1639611,135.118903 C72.1000106,140.294532 63.8598341,140.263982 58.9103319,135.205326 L3.8112137,78.891075 C-1.25273677,73.7154463 -1.2880417,65.3601778 3.8112137,60.1484655 L58.9103319,3.8342148 Z"></path>
+		            </svg>
+		        </a>
+		    </header>
+		    <div class="about-title">
+		        <h1>about me</h1>
+		        <p>一天很短，开心了就笑，不开心了就过会儿再笑。</p>
+		    </div>
+		</div>
+		<div class="container-fixed">
+		    <div class="container-inner">
+		        <article>
+		            <section>
+		                <h1>关于我</h1>
+		                <p>
+		                    <i class="fa fa-check"></i>昵称：阿粉 &nbsp;
+		                    <i class="fa fa-check"></i>性别：IT男 &nbsp;
+		                    <i class="fa fa-check"></i>邮箱：1396594323@qq.com &nbsp;
+		                    <i class="fa fa-check"></i>QQ：1396594323 &nbsp;
+		                    <i class="fa fa-check"></i>爱好：运动、学习 &nbsp;
+		                 
+		                </p>
+		                <p>
+		                    如需交换友链，可以在留言区留言<br>
+		                    名称：ZQ个人博客<br>
+		                    网址：http://lzqcode.com/<br>
+		                    图标：http://www.lzqcode.com/images/admin_img.png<br>
+		                    描述：只要朝着一个方向努力，一切都会变得得心应手
+		                </p>
+		                <p>
+		                    申请提交后若无其它原因将在24小时内审核,如超过时间还未通过,请私信我.(各种额外因素)
+		                </p>
+		            </section>
+					<section>
+		                <h1>关于本站</h1>
+		                <p>
+							<i class="fa fa-check"></i>Java
+							<i class="fa fa-check"></i>Java web
+							<i class="fa fa-check"></i>thymeleaf
+							<i class="fa fa-check"></i>spring boot
+		                 
+		                </p>
+		                <p>
+							起源：由于之前刚学习完springboot，便想找一个小项目来练习。<br>
+							教程地址：https://www.bilibili.com/video/BV1KJ411D7bW<br>
+							框架：spring boot  mybatis  shiro<br>
+							感谢老师的无私教导
+		                </p>
+		                <p>
+		                    想了解关于本站的一些技术或者需要源码的可以联系我（加我QQ或发邮件）
+		                </p>
+		            </section>
+					<section>
+						<h1>关于版权</h1>
+						<p>
+							<i class="fa fa-check"></i>开源
+							<i class="fa fa-check"></i>GitHub
+							<i class="fa fa-check"></i>哔哩哔哩
+							<i class="fa fa-check"></i>博客模板
+
+						</p>
+						<p>
+							本站的前端页面基本都是寻找网上的开源项目的代码<br>
+							前台的博客模板下载网址：https://www.17sucai.com/<br>
+							后端管理前端页面借用了以为大佬的，查看大佬的GitHub的前端页面源码：https://github.com/oneStarLR/myblog-page<br>
+							感谢各位大佬的无私贡献
+						</p>
+						<p>
+							关于本站有任何的版权问题请及时联系我（加我QQ或发邮件）
+						</p>
+					</section>
+		        </article>
+		        <ul class="link-list">
+					<li>
+						<div class="pd-lr-10">
+							<a href="https://blog.csdn.net/qq_43451907" target="_blank">
+								<img src="https://profile.csdnimg.cn/5/3/2/3_qq_43451907">
+								<h3>bin个人CSND</h3>
+								<p>每一天都在为成为大佬而努力</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pd-lr-10">
+							<a href="https://github.com/" target="_blank">
+								<img src="https://avatars0.githubusercontent.com/u/45786483?s=460&u=5e20cb92154c0fed38994f332c2001c936745516&v=4">
+								<h3>bin的GitHub</h3>
+								<p>每一天都在为成为大佬而努力</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pd-lr-10">
+							<a href="https://gitee.com/afens" target="_blank">
+								<img src="https://gitee.com/static/images/logo-black.svg?t=158106664">
+								<h3>bin的码云</h3>
+								<p>每一天都在为成为大佬而努力</p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="pd-lr-10">
+							<a href="http://www.baidu.com" target="_blank">
+								<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png">
+								<h3>bin个人博客</h3>
+								<p>每一天都在为成为大佬而努力</p>
+							</a>
+						</div>
+					</li>
+		        </ul>
+		    </div>
+		</div>
+    </div>
+    <footer class="grid-footer">
+        <div class="footer-fixed">
+            <div class="copyright">
+                <div class="info">
+                    <div class="contact">
+                        <a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="https://wpa.qq.com/msgrd?v=3&uin=930054439&site=qq&menu=yes" class="qq" target="_blank" title="930054439"><i class="fa fa-qq"></i></a>
+                        <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=gbiysbG0tbWyuMHw8K-i7uw" class="email" target="_blank" title="930054439@qq.com"><i class="fa fa-envelope"></i></a>
+                        <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
+                    </div>
+                    <p class="mt05">
+                         Copyright &copy; 2019-2020 bin博客 All Rights Reserved V.3.1.3 Power by bin博客
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/js/yss/gloable.js}"></script>
+    <script th:src="@{/js/yss/gloable.js}"></script>
+    <script>NProgress.start();</script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+ 	<script th:src="@{/js/plugins/blogbenoitboucart.min.js}"></script>
+    <script> 
+        window.onload = function () {
+            NProgress.done();
+        };
+    </script>
+</body>
+</html>

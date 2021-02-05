@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="www.lzqcode.com" />
+    <meta name="robots" content="all" />
+    <title>我的博客</title>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" th:href="@{/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="layui/css/layui.css" th:href="@{/layui/css/layui.css}"/>
+    <link rel="stylesheet" href="css/master.css" th:href="@{/css/master.css}"/>
+    <link rel="stylesheet" href="css/gloable.css" th:href="@{/css/gloable.css}"/>
+    <link rel="stylesheet" href="css/nprogress.css" th:href="@{/css/nprogress.css}"/>
+    <link rel="stylesheet" href="css/blog.css" th:href="@{/css/blog.css}"/>
+</head>
+<body>
+    <div class="header">
+    </div>
+    <header class="gird-header">
+        <div class="header-fixed">
+            <div class="header-inner">
+                <a href="javascript:void(0)" class="header-logo" id="logo">Mr.bin</a>
+                <nav class="nav" id="nav">
+                    <ul>
+						<li><a th:href="@{/index}">首页</a></li>
+						<li><a th:href="@{/article}">博客</a></li>
+						<li><a th:href="@{/message}">留言</a></li>
+						<li><a th:href="@{/diary}">日记</a></li>
+						<li><a th:href="@{/link}">友链</a></li>
+						<li><a th:href="@{/about}">about me</a></li>
+                    </ul>
+                </nav>
+                <a href="/login" class="blog-user">
+                    <i class="fa fa-qq"></i>
+                </a>
+                <a class="phone-menu">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div class="doc-container" id="doc-container">
+        <div class="container-fixed">
+		    <div class="col-content">
+		        <div class="inner">
+		            <article class="article-list bloglist" id="LAY_bloglist" th:each="blog : ${page.beans}">
+						<section class="article-item zoomIn article">       
+<!--							<div class="fc-flag">置顶</div>   -->
+							<h5 class="title">       
+								<span class="fc-blue" th:text="${blog.flag}">【原创】</span>
+								<a href="read.html" th:href="@{/toRead/{id}(id=${blog.id})}" th:text="${blog.title}">Java学习路线推荐</a>
+							</h5>   
+							<div class="time">
+								<span class="year fs-18 ml10" th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020</span>
+							</div>   
+							<div class="content">       
+								<a href="read.html" th:href="@{/toRead/{id}(id=${blog.id})}" class="cover img-light">
+									<img src="http://www.lzqcode.com/images/java.jpg" th:src="@{${blog.firstPicture}}">
+								</a>
+								<p th:text="${blog.description}">
+									这篇文章是为了介绍自己自学用过的Java视频资料。本套整合教程总共180+G，共450+小时。考虑到绝大部分视频至少要看两遍，而且视频总时长并不代表学习时长，所以零基础初学者总学习时间大约为：600小时视频时长 + 100小时理解 + 100小时练习，至少需要800小时。
+									你可能觉得自己能一天学习8小时，实际上平均下来每天能学4小时都算厉害了。总会有各种原因，比如当天内容太难，公司聚会，要出差等等。如果周末你也是坚持学习，那么最理想状况下，6个半月就可以学完，达到工作后能被人带的水平。但我知道那其实基本不可能。
+								</p>
+								</div>
+							<div class="read-more">       
+								<a href="read.html" class="fc-black f-fwb">继续阅读</a>   
+							</div>    
+							<aside class="f-oh footer">       
+								<div class="f-fl tags">           
+									<span class="fa fa-tags fs-16"></span>           
+									<a class="tag" th:text="${blog.type.typename}">java路线</a>
+								</div>       
+								<div class="f-fr">           
+									<span class="read">               
+										<i class="fa fa-eye fs-16"></i>               
+										<i class="num" th:text="${blog.views}">213</i>
+									</span>           
+									<span class="ml20">               
+										<i class="fa fa-comments fs-16"></i>               
+										<a href="javascript:void(0)" class="num fc-grey">1</a>           
+									</span>       
+								</div>   
+							</aside>
+						</section>
+
+		            </article>
+<!--					<section class="article-item zoomIn article">-->
+<!--						<div class="f-fl">-->
+<!--							<a href="#" class="btn layui-btn layui-btn-normal">上一页</a>-->
+<!--						</div>-->
+<!--						<div class="f-fr">-->
+<!--							<a href="#" class="btn layui-btn layui-btn-normal">下一页</a>-->
+<!--						</div>-->
+<!--					</section>-->
+					<div style="padding-top: 20px;">
+						<div style="height: 86px; padding: 0 24px; background-color: white; " th:if="${page.PageCount}>1">
+
+								<div style="padding-top: 24px;" >
+									<div class="f-fl">
+										<a href="#" th:href="@{/article(currentPage=${page.currentPage}-1,currentCount=5)}" class="btn layui-btn layui-btn-normal" th:unless="${page.currentPage}==1">上一页</a>
+									</div>
+									<div class="f-fr">
+										<a href="#" th:href="@{/article(currentPage=${page.currentPage}+1,currentCount=5)}" class="btn layui-btn layui-btn-normal" th:unless="${page.currentPage}==${page.PageCount}">下一页</a>
+									</div>
+								</div>
+
+						</div>
+					</div>
+		        </div>
+		    </div>
+		    <div class="col-other">
+		        <div class="inner">
+					<div class="other-item" id="categoryandsearch">
+			    		<div class="search">
+					        <form class="search-wrap" method="get" action="/article">
+					            <input type="text" id="searchtxt" name="queryText" placeholder="输入关键字搜索" />
+					            <span class="search-icon">
+					                <i class="fa fa-search"></i>
+					            </span>
+					        </form>
+			        		<ul class="search-result"></ul>
+			    		</div>
+
+			    		<ul class="category mt10" id="category">
+							<li data-index="0" class="slider"></li>
+							<div th:each="type, iterStat : ${types}">
+								<li th:data-index="${iterStat.count}"><a href="/Blog/Article" th:href="@{/article/{id}(id=${type.id})}" th:text="${type.typename}">博客分类</a></li>
+							</div>
+
+<!--				            <li data-index="2"><a href="/Blog/Article/1/">Java</a></li>-->
+<!--				            <li data-index="3"><a href="/Blog/Article/2/">前端</a></li>-->
+<!--				            <li data-index="4"><a href="/Blog/Article/3/">Python</a></li>-->
+<!--				            <li data-index="5"><a href="/Blog/Article/4/">PHP</a></li>-->
+<!--				            <li data-index="6"><a href="/Blog/Article/5/">其它</a></li>-->
+			    		</ul>
+					</div>
+					<!--右边悬浮 平板或手机设备显示-->
+					<div class="category-toggle"><i class="layui-icon">&#xe603;</i></div>
+					<div class="article-category" th:each="type, iterStat : ${types}">
+					    <div class="article-category-title">分类导航</div>
+					            <a href="/Blog/Article/1/" th:href="@{/article/{id}(id=${type.id})}" th:text="${type.typename}">Java</a>
+<!--					            <a href="/Blog/Article/2/">前端</a>-->
+<!--					            <a href="/Blog/Article/3/">Python</a>-->
+<!--					            <a href="/Blog/Article/4/">PHP</a>-->
+<!--					            <a href="/Blog/Article/5/">其它</a>-->
+					    <div class="f-cb"></div>
+					</div>
+					<!--遮罩-->
+					<div class="blog-mask animated layui-hide"></div>
+					<div class="other-item">
+					    <h5 class="other-item-title">置顶推荐</h5>
+					    <div class="inner">
+					        <ul class="hot-list-article">
+								<li th:each="publishedBlog : ${publishedBlogs}">
+
+									<div>
+								       <a href="/Blog/Read/9" th:href="@{/toRead/{id}(id=${publishedBlog.id})}" th:text="${publishedBlog.title}">SpringBoot 入门爬虫项目实战</a>
+						           </div>
+
+								</li>
+<!--								<div class="hot-list-article" th:each="publishedBlog : ${publishedBlogs}">-->
+<!--									<li><a href="/Blog/Read/9" th:text="${publishedBlog.title}">SpringBoot 入门爬虫项目实战</a></li>-->
+<!--								</div>-->
+
+<!--					                <li> <a href="/Blog/Read/12">SpringBoot 2.x 教你快速入门</a></li>-->
+<!--					                <li> <a href="/Blog/Read/13">java学习路线</a></li>-->
+<!--					                <li> <a href="/Blog/Read/4">基于SpringBoot+JWT+Redis跨域单点登录的实现</a></li>-->
+<!--					                <li> <a href="/Blog/Read/7">SpringBoot 中如何使用SwaggerAPI接口文档？</a></li>-->
+<!--					                <li> <a href="/Blog/Read/11">小白轻松入门Redis</a></li>-->
+<!--					                <li> <a href="/Blog/Read/14">微信一键登录功能的实现</a></li>-->
+<!--					                <li> <a href="/Blog/Read/8">NPOI导入导出Excel</a></li>-->
+					        </ul>
+					    </div>
+					</div>
+					<div class="other-item">
+					    <h5 class="other-item-title">热门文章</h5>
+					    <div class="inner">
+					        <ul class="hot-list-article">
+								<li th:each="hotBlog : ${hotBlogs}">
+
+									<div>
+										<a href="/Blog/Read/9" th:href="@{/toRead/{id}(id=${hotBlog.id})}" th:text="${hotBlog.title}">SpringBoot 入门爬虫项目实战</a>
+									</div>
+
+								</li>
+					        </ul>
+					    </div>
+					</div>
+					<div class="other-item">
+					    <h5 class="other-item-title">最近访客</h5>
+					    <div class="inner">
+					        <dl class="vistor">
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/72388EA977643E8F97111222675720B1/100"><cite>Anonymous</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/342F777E313DDF5CCD6E3E707BB0770B/100"><cite>Dekstra</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/EA5D00A72C0C43ECD8FC481BD274DEEC/100"><cite>惜i</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/EF18CEC98150D2442183AA30F05AAD7B/100"><cite>↙Aㄨ计划 ◆莪↘</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/3D8D91AD2BAFD36F5AC494DA51E270E6/100"><cite>.</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/B745A110DAB712A0E6C5D0B633E905D3/100"><cite>Lambert.</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/E9BA3A2499EC068B7917B9EF45C4D13C/100"><cite>64ღ</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/09F92966169272DD7DD9999E709A0204/100"><cite>doBoor</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/59991D53192643A1A651383847332EB6/100"><cite>毛毛小妖</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/FF34F311DDC43E2AF63BE897BCA24F05/100"><cite>NULL</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/59AA25A7627284AE62C8E6EBDC6FE417/100"><cite>吓一跳</cite></a></dd>
+					                <dd><a href="javasript:;"><img src="https://thirdqq.qlogo.cn/qqapp/101465933/28B021E0F5AF0A4B9B781A24329FE897/100"><cite>如初</cite></a></dd>
+					        </dl>
+					    </div>
+					</div>
+		        </div>
+		    </div>
+		</div>
+    </div>
+    <footer class="grid-footer">
+        <div class="footer-fixed">
+            <div class="copyright">
+                <div class="info">
+                    <div class="contact">
+                        <a href="javascript:void(0)" class="github" target="_blank"><i class="fa fa-github"></i></a>
+                        <a href="https://wpa.qq.com/msgrd?v=3&uin=930054439&site=qq&menu=yes" class="qq" target="_blank" title="930054439"><i class="fa fa-qq"></i></a>
+                        <a href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=gbiysbG0tbWyuMHw8K-i7uw" class="email" target="_blank" title="930054439@qq.com"><i class="fa fa-envelope"></i></a>
+                        <a href="javascript:void(0)" class="weixin"><i class="fa fa-weixin"></i></a>
+                    </div>
+                    <p class="mt05">
+                         Copyright &copy; 2019-2020 ZQ博客 All Rights Reserved V.3.1.3 Power by ZQ博客
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script th:src="@{/layui/layui.js}"></script>
+    <script th:src="@{/js/yss/gloable.js}"></script>
+    <script th:src="@{/js/plugins/nprogress.js}"></script>
+    <script>NProgress.start();</script>
+ 	<script th:src="@{/js/yss/article.js}"></script>
+    <script> 
+        window.onload = function () {
+            NProgress.done();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+2020-08-20 22:34:07.013  WARN 39988 --- [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.bin.myblog]' package. Please check your configuration.

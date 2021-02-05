@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分类管理</title>
+  <link href="../../admin/images/me.jpg" th:href="@{/admin/images/me.jpg}" rel="icon" type="image/x-ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+  <link rel="stylesheet" href="../../admin/css/me.css" th:href="@{/admin/css/me.css}">
+</head>
+<body>
+
+<!--导航栏-->
+<nav class="ui inverted gird-header" >
+  <div class="ui container">
+    <div class="ui inverted secondary stackable menu">
+      <h2 class="ui olive header item" style="font-family: STSong">后台管理</h2>
+      <a th:href="@{/blog/blogs}" class=" m-item item m-mobile-hide"><i class="home icon"></i>文章管理</a>
+      <a th:href="@{/type/types}" class="active m-item item m-mobile-hide"><i class="clone outline icon"></i>分类管理</a>
+      <a th:href="@{/user/friendlinks}" class=" m-item item m-mobile-hide"><i class="pencil alternate icon"></i>友链管理</a>
+      <a th:href="@{/user/pictures}" class=" m-item item m-mobile-hide"><i class="image icon"></i>相册管理</a>
+      <div class="right m-item m-mobile-hide menu">
+        <div class="ui dropdown  item">
+          <div class="text">
+            <img class="ui avatar image" src="../../admin/images/me.jpg">
+            <span th:text="${session.user.nickname}">oneStar</span>
+          </div>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            <a href="#" th:href="@{/user/logout}" class="item">注销</a>
+            <a href="#" th:href="@{/}" class="item">回到主页</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+    <i class="sidebar icon"></i>
+  </a>
+</nav>
+
+  <div class="m-padded-tb-hugex">
+  <div class="ui attached pointing menu">
+    <div class="ui container">
+      <div class="right menu">
+        <a href="#" th:href="@{/type/input}" class="item">新增</a>
+        <a href="#" class="teal active item">列表</a>
+      </div>
+    </div>
+  </div>
+  </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!--中间内容-->
+  <div  class="m-padded-tb-big">
+    <div class="ui container">
+      <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+        <i class="close icon"></i>
+        <div class="" th:text="${message}">提示：操作成功！</div>
+      </div>
+      <table class="ui compact teal table">
+        <thead>
+          <tr align="center">
+            <th>ID</th>
+            <th>名称</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr align="center" th:each="type,iterStat : ${page.beans}">
+            <td th:text="${iterStat.count}">1</td>
+            <td th:text="${type.typename}">我的故事</td>
+            <td>
+              <a href="#" th:href="@{/type/{id}/input(id=${type.id})}" class="ui mini teal basic button">编辑</a>
+              <a th:href="@{/type/deleteType/{id}(id=${type.id})}" onclick="return confirm('确定要删除该分类吗？三思啊! 删了可就没了！')" class="ui mini red basic button">删除</a>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th colspan="6" >
+              <div class="ui inverted divided stackable grid" th:if="${page.PageCount}>1">
+                <div class="three wide column" align="center">
+                  <a th:href="@{/type/types(currentPage=${page.currentPage}-1,currentCount=5)}" class="item" th:unless="${page.currentPage}==1">上一页</a>
+                </div>
+
+                <div class="ten wide column" align="center">
+                  <p>第 <span th:text="${page.currentPage}"></span> 页，共 <span th:text="${page.PageCount}"></span> 页，有 <span th:text="${page.totalCount}"></span>个</p>
+                </div>
+
+                <div class="three wide column" align="center">
+                  <a th:href="@{/type/types(currentPage=${page.currentPage}+1,currentCount=5)}" class="item" th:unless="${page.currentPage}==${page.PageCount}">下一页</a>
+                </div>
+              </div>
+              <div align="center">
+              <a href="#" th:href="@{/type/input}">
+                <button type="button" class="ui teal button m-mobile-wide m-margin-top"><i class="pencil icon"></i>新增</button>
+              </a>
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <br>
+  <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+  <!--底部栏-->
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+
+  <script>
+
+      // $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+
+      // 运行时间统计
+
+
+    $('.menu.toggle').click(function () {
+      $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown({
+      on : 'hover'
+    });
+
+    //消息提示关闭初始化
+    $('.message .close')
+      .on('click', function () {
+        $(this)
+          .closest('.message')
+          .transition('fade');
+      });
+
+    function deleteType(id) {
+      alert(id);
+      $.ajax({
+        type : "post",
+        url : "type/deleteType/{id}",
+        data : {
+          "id" : id,
+        },
+
+        beforeSend : function () {
+          alert("确定要删除该分类吗？")
+          return true;
+        },
+        success : function () {
+          window.location.href="type/types";
+        },
+        error : function () {
+          window.location.href="type/types";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

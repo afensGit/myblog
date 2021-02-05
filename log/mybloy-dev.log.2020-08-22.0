@@ -1,0 +1,231 @@
+2020-08-22 22:42:14.180  INFO 14816 --- [restartedMain] com.bin.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-3PK6FJO with PID 14816 (E:\maven_projects\myblog\target\classes started by 黄彬 in E:\maven_projects\myblog)
+2020-08-22 22:42:14.195  INFO 14816 --- [restartedMain] com.bin.myblog.MyblogApplication         : The following profiles are active: dev
+2020-08-22 22:42:14.467  INFO 14816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-22 22:42:14.468  INFO 14816 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-22 22:42:23.572  INFO 14816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-22 22:42:23.612  INFO 14816 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-22 22:42:23.613  INFO 14816 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-22 22:42:23.796  INFO 14816 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-22 22:42:23.796  INFO 14816 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 9264 ms
+2020-08-22 22:42:25.728  INFO 14816 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-22 22:42:25.867  INFO 14816 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-22 22:42:26.558  INFO 14816 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-22 22:42:26.630  INFO 14816 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-22 22:42:26.660  INFO 14816 --- [restartedMain] com.bin.myblog.MyblogApplication         : Started MyblogApplication in 15.18 seconds (JVM running for 19.752)
+2020-08-22 22:42:26.718  INFO 14816 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-22 22:42:26.718  INFO 14816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-22 22:42:26.730  INFO 14816 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-08-22 22:42:31.680  INFO 14816 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/', ip='127.0.0.1', classMethod='com.bin.myblog.controller.RouterController.toIndex', args=[]}
+2020-08-22 22:42:31.687  INFO 14816 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Result : {}index
+2020-08-22 22:42:31.688  INFO 14816 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 22:42:36.438  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/login', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toLogin', args=[]}
+2020-08-22 22:42:36.438  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/login
+2020-08-22 22:42:36.438  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 22:42:36.482 ERROR 14816 --- [http-nio-8080-exec-7] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-7] Exception processing template "admin/login": An error happened during template parsing (template: "class path resource [templates/admin/login.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.attoparser.ParseException: Could not parse as expression: "${#strings.isEmpty(message)}}" (template: "admin/login" - line 43, col 50)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "${#strings.isEmpty(message)}}" (template: "admin/login" - line 43, col 50)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.standard.processor.StandardUnlessTagProcessor.isVisible(StandardUnlessTagProcessor.java:57)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+
+2020-08-22 22:42:36.486 ERROR 14816 --- [http-nio-8080-exec-7] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/admin/login.html]")] with root cause
+
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "${#strings.isEmpty(message)}}" (template: "admin/login" - line 43, col 50)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44)
+	at org.thymeleaf.standard.processor.StandardUnlessTagProcessor.isVisible(StandardUnlessTagProcessor.java:57)
+	at org.thymeleaf.standard.processor.AbstractStandardConditionalVisibilityTagProcessor.doProcess(AbstractStandardConditionalVisibilityTagProcessor.java:61)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124)
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109)
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297)
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402)
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2020-08-22 22:43:57.127  INFO 14816 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toIndex', args=[]}
+2020-08-22 22:43:57.127  INFO 14816 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Result : {}index
+2020-08-22 22:43:57.128  INFO 14816 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 22:44:12.354  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/login', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toLogin', args=[]}
+2020-08-22 22:44:12.354  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/login
+2020-08-22 22:44:12.355  INFO 14816 --- [http-nio-8080-exec-7] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:17:47.190  INFO 7468 --- [restartedMain] com.bin.myblog.MyblogApplication         : Starting MyblogApplication on DESKTOP-3PK6FJO with PID 7468 (E:\maven_projects\myblog\target\classes started by 黄彬 in E:\maven_projects\myblog)
+2020-08-22 23:17:47.195  INFO 7468 --- [restartedMain] com.bin.myblog.MyblogApplication         : The following profiles are active: dev
+2020-08-22 23:17:47.307  INFO 7468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-22 23:17:47.308  INFO 7468 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-22 23:17:49.569  INFO 7468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-08-22 23:17:49.578  INFO 7468 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-22 23:17:49.578  INFO 7468 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-22 23:17:49.789  INFO 7468 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-22 23:17:49.791  INFO 7468 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2483 ms
+2020-08-22 23:17:50.659  INFO 7468 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-22 23:17:50.790  INFO 7468 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-08-22 23:17:51.194  INFO 7468 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-08-22 23:17:51.248  INFO 7468 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-22 23:17:51.260  INFO 7468 --- [restartedMain] com.bin.myblog.MyblogApplication         : Started MyblogApplication in 5.3 seconds (JVM running for 8.563)
+2020-08-22 23:18:02.235  INFO 7468 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-22 23:18:02.236  INFO 7468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-08-22 23:18:02.266  INFO 7468 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 30 ms
+2020-08-22 23:18:05.132  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toIndex', args=[]}
+2020-08-22 23:18:05.138  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : Result : {}index
+2020-08-22 23:18:05.138  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:08.991  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/article', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toArticle', args=[]}
+2020-08-22 23:18:08.993  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Result : {}article
+2020-08-22 23:18:08.994  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:12.452  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/index', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toIndex', args=[]}
+2020-08-22 23:18:12.453  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Result : {}index
+2020-08-22 23:18:12.453  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:15.450  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/login', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.RouterController.toLogin', args=[]}
+2020-08-22 23:18:15.451  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/login
+2020-08-22 23:18:15.451  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:19.260  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/doLogin', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.doLogin', args=[bin, sadf]}
+2020-08-22 23:18:19.271  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/index
+2020-08-22 23:18:19.271  INFO 7468 --- [http-nio-8080-exec-9] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:25.577  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/types', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toTypes', args=[]}
+2020-08-22 23:18:25.577  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/types
+2020-08-22 23:18:25.577  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:33.289  INFO 7468 --- [http-nio-8080-exec-1] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/friendlinks', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toFriendlinks', args=[]}
+2020-08-22 23:18:33.290  INFO 7468 --- [http-nio-8080-exec-1] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/friendlinks
+2020-08-22 23:18:33.291  INFO 7468 --- [http-nio-8080-exec-1] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:37.411  INFO 7468 --- [http-nio-8080-exec-4] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/pictures', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toPictures', args=[]}
+2020-08-22 23:18:37.411  INFO 7468 --- [http-nio-8080-exec-4] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/pictures
+2020-08-22 23:18:37.411  INFO 7468 --- [http-nio-8080-exec-4] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:50.090  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/friendlinks', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toFriendlinks', args=[]}
+2020-08-22 23:18:50.091  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/friendlinks
+2020-08-22 23:18:50.091  INFO 7468 --- [http-nio-8080-exec-2] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:51.540  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/types', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toTypes', args=[]}
+2020-08-22 23:18:51.540  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/types
+2020-08-22 23:18:51.541  INFO 7468 --- [http-nio-8080-exec-5] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------
+2020-08-22 23:18:52.292  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Request : {}RequestLog{url='http://localhost:8080/user/blogs', ip='0:0:0:0:0:0:0:1', classMethod='com.bin.myblog.controller.UserController.toBlogs', args=[]}
+2020-08-22 23:18:52.292  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : Result : {}admin/blogs
+2020-08-22 23:18:52.292  INFO 7468 --- [http-nio-8080-exec-6] com.bin.myblog.logHandler.LogAspect      : ----------doAfter-----------

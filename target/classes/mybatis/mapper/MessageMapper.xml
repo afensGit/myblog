@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bin.myblog.dao.MessageMapper">
+
+    <select id="getMessageById" resultType="com.bin.myblog.pojo.Message" parameterType="java.lang.Long">
+        select * from message where id = #{id}
+    </select>
+
+    <select id="getAllMessage" resultType="com.bin.myblog.pojo.Message">
+        select * from message
+    </select>
+
+    <insert id="saveMessage" parameterType="com.bin.myblog.pojo.Message">
+        insert into message (content,createTime,userId,messageId,parentNickname)
+         values (#{content},#{createTime},#{userId},#{messageId},#{parentNickname})
+    </insert>
+
+    <delete id="deleteMessage" parameterType="java.lang.Long">
+        delete from message where id = #{id}
+    </delete>
+
+</mapper>
